@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.all.min.js"></script>
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
+  
+  <link rel="stylesheet" href="./signup.css">
+</head>
+<body>
+    <div class="mainContainer">
+       <div class="body">
+        <form id="sform">
+            <div id="inputs">
+                <p class="userName">
+                <h4>Username</h4>
+                <input id="userName" required type="text" placeholder="Username">
+                </p>
+                <p class="email">
+                <h4> Email Address</h4>
+                <input id="email" required type="email" placeholder=" email@expense.com">
+                </p>
+                <p class="password">
+                <h4> Password </h4>
+                <input id="password" required type="password" placeholder="8 characters minimum"><br>
+                <span id="span"> 8 characters minimum </span>
+                </p>
+                <p class="confirmPassword">
+                <h4> Confirm Password </h4>
+                <input id="confirmPassword" required type="password" placeholder="Confirm your password">
+                <div id="passError">confirm password is wrong</div>
+                </p>
+              </div>
+              <div class="buttonAnchor">
+                <button type="submit">Sign Up</button>
+                <a href="./login.html">Already have an account</a>
+              </div>
+            </form>
+            <!-- <div id="popup" class="popup">
+              <h5>
+                Sign-in Successfully!
+              </h5>
+              <button class="signIn" onclick="closePopup()">OK</button>
+            </div>        -->
+        </form>
+       </div>
+    </div>
+
+    <script src="./signup.js"></script>
+</body>
+</html>

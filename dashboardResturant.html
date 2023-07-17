@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .mainContainer {
+            height: 200vh;
+            background: url(./Assets/images/2.jpg)no-repeat;
+            background-size: cover;
+
+
+        }
+
+        .header {
+            border: 2px solid #aeabab95;
+            box-shadow: #b0aeae 2px 1px 3px 1px;
+            display: flex;
+            color: WHITE;
+            font-family: Arial, Helvetica, sans-serif;
+        
+            align-items: center;
+            background: url(./Assets/images/dark-brown-abstract-layout-vector.jpg);
+    
+            padding: 0px 20px;
+            height: 80px;
+        }
+        h2{
+margin-left: 180px;
+font-size:40px;
+        }
+
+        #logoutBtn {
+            background-color: #000000c5;
+            width: 60px;
+            margin-left: 250px;
+            height: 60px;
+            color: white;
+            border-radius: 25px;
+        }
+        .allCategories h1{
+            margin-left: 500px;
+padding-left: 40px;
+            color: white;
+            background-color: #5f1503cc;
+            width: 300px;
+        }
+
+        button:hover {
+            box-shadow: #b0aeae 2px 3px 3px 1px;
+        }
+       
+
+        button:active {
+            border: 2px solid white;
+
+        }
+
+        .body {
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+    
+            border: 2px solid #97919195;
+            box-shadow: #b0aeae 2px 1px 3px 1px;
+            width: 50%;
+        }
+
+        input {
+            width: 220px;
+            height: 20px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid #a39e9ee4;
+        }
+
+        #file {
+            border: none;
+        }
+
+        #inputs {
+            display: none;
+        }
+
+        #dForm{
+            color: rgb(17, 9, 9);
+            border: 1px solid red;
+            color: white;
+            background: url(./Assets/images/dark-brown-abstract-layout-vector.jpg)no-repeat;
+            background-size: cover;
+            width:  300px;
+            height: 300px;
+            padding-top: 20px;
+            padding-left: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        table {
+            display: flex;
+            color: white;
+            font-size: 22px;
+            padding-left: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+            border: 1px solid red;
+            background: url(./Assets/images/dark-brown-abstract-layout-vector.jpg)no-repeat;
+            background-size: cover;
+            width:50%;
+            margin-left: 300px;
+            margin-top: 30px;
+            
+            border-radius: 5px;
+        }
+
+        table {
+            margin-bottom: 10px;
+        }
+
+        #dForm button,
+        #blockItemI,
+        #editBtn,
+        #dltBtn {
+            width: 80px;
+            height: 25px;
+            margin-top: 5px;
+            background-color: #000000d0;
+            color: white;
+            border-radius: 3px;
+        }
+        
+
+        #trEdit {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 30rem;
+        }
+
+        #blockItemI {
+            margin: 10px;
+            height: 50px;
+            width: 200px;
+        }
+
+        .allCategories {
+            margin: 30px 0ps 5px 0px;
+        }
+
+        .display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        p {
+            margin: 10px auto 5px auto;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        #file {
+            display: none;
+        }
+
+        .fa-upload {
+            border: 1px black solid;
+            border-radius: 2px;
+            padding: 2px;
+
+        }
+
+        label i {
+            font-size: 18px;
+        }
+        .cate{
+            margin-left: 400px;
+            padding-left: 50px;
+            margin-top: 20px;
+            color:white;
+            background-color: #5f1503bb;
+            width:30%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form{
+            margin-left: 400px;
+            margin-top: 20px;
+            color: rgb(156, 49, 6);
+            font-weight: bold;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="header">
+            <h1 id="activeUser"></h1>
+            <h2>RESTURANT MENU</h2>
+            <button id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i></button>
+        </div>
+        
+        <div>
+            <h1 class="cate">Manage Categories</h1>      
+            
+            <form>
+                <label for="categorys">Category Name:</label>
+                <input type="text" id="categorys" name="category">
+                <button type="button" onclick="addCategorys()">Add</button>
+                <input type="text" id="searchBar" onkeyup="searchCategorys()" placeholder="Search for category..">
+    
+             
+            </form>
+            
+            <table id="categoryTable">
+                <tr>
+                    <th>Category</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </table>
+            
+        </div>
+        <div class="body">
+            <div class="display">
+                <button id="blockItemI" onclick="blockItem()"> Menu Items Add</button>
+                <div id="inputs" class="Category">
+                    <div id="dForm">
+                        <p> Your Item Name</p>
+                        <input id="categoryInp" type="text" placeholder="Name">
+                        <p>Item Price</p>
+                        <input id="priceInp" type="number" placeholder="Price">
+                        <p>Upload  Photo</p>
+                        <input id="file" type="file">
+                        <label for="file"><i class="fa-solid fa-upload"></i> &nbsp; select Photo</label>
+                        <br>
+                        <button onclick="addCategory()">Save Items</button>
+                        <button onclick="doneItem()">Done</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+            
+                <div class="allCategories">
+                    <h1> Show All Menu</h1>
+                </div>
+                <table id="table"  cellpadding="1px" cellspacing="1px">
+                </table>
+            </div>
+
+     
+     
+
+    <script src="./dashboardResturant.js"></script>
+    <script src="./admindash.js"></script>
+</body>
+
+</html>
